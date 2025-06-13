@@ -15,33 +15,34 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Liquid Glass Demo',
       home: Scaffold(
-  backgroundColor: Colors.grey[900],
-  body: Center(
-    child: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        GlassTheme(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              'Hello iOS 18!',
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
-        ),
-        const SizedBox(height: 20),
-        LiquidButton(
-          text: 'Press Me',
-          icon: Icons.flash_on,
-          onPressed: () {
-            debugPrint("Button Pressed!");
-          },
-        ),
-      ],
+        backgroundColor: Colors.blueGrey.shade900,
+        body: Center(
+         LiquidGlassContainer(
+  width: 300,
+  height: 180,
+  blur: 30,
+  opacity: 0.15,
+  borderRadius: BorderRadius.circular(25),
+  borderColor: Colors.white.withOpacity(0.2),
+  boxShadow: const BoxShadow(
+    color: Colors.black26,
+    blurRadius: 12,
+    offset: Offset(0, 6),
+  ),
+  child: const Center(
+    child: Text(
+      "Liquid Glass 💧",
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   ),
-),
+)
 
+        ),
+      ),
     );
   }
 }
