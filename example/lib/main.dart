@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   ),
   child: const Center(
     child: Text(
-      "Liquid Glass 💧",
+      "Liquid Glass 💧", 
       style: TextStyle(
         color: Colors.white,
         fontSize: 24,
