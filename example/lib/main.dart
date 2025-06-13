@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     blurRadius: 12,
     offset: Offset(0, 6),
   ),
-  child: const Center(
+  child: const Center( 
     child: Text(
       "Liquid Glass 💧", 
       style: TextStyle(  
