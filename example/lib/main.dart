@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        LiquidGlassContainer(
+        GlassTheme(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Text(
