@@ -1,45 +1,36 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:liquid_glass/liquid_glass.dart';
-
 
 class LiquidGlassContainer extends StatelessWidget {
+  final double blur;
+  final double opacity;
+  final BorderRadiusGeometry borderRadius;
   final Widget child;
-  final BorderRadius borderRadius;
-  final EdgeInsets padding;
-  final double? blurX;
-  final double? blurY;
-  final double? opacity;
-  final Color? backgroundColor;
+  final Color? color;
 
   const LiquidGlassContainer({
     super.key,
     required this.child,
-    this.borderRadius = const BorderRadius.all(Radius.circular(16)),
-    this.padding = const EdgeInsets.all(16),
-    this.blurX,
-    this.blurY,
-    this.opacity,
-    this.backgroundColor,
+    this.blur = 20.0,
+    this.opacity = 0.2,
+    this.borderRadius = const BorderRadius.all(Radius.circular(20)),
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    final theme = GlassTheme.of(context);
-
     return ClipRRect(
       borderRadius: borderRadius,
       child: BackdropFilter(
-        filter: ImageFilter.blur(
-          sigmaX: blurX ?? theme.blurX,
-          sigmaY: blurY ?? theme.blurY,
-        ),
+        filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
         child: Container(
-          padding: padding,
           decoration: BoxDecoration(
-            color: (backgroundColor ?? theme.color).withOpacity(opacity ?? theme.opacity),
+            color: (color ?? Colors.white).withOpacity(opacity),
             borderRadius: borderRadius,
-            border: Border.all(color: Colors.white.withOpacity(0.2)),
+            border: Border.all(
+              color: Colors.white.withOpacity(0.15),
+              width: 0.8,
+            ),
           ),
           child: child,
         ),
